@@ -1,0 +1,41 @@
+<!-- templates/emails/order_confirmation.html -->
+{% extends "emails/base.html" %}
+
+{% block title %}Order Confirmation - {{ site_name }}{% endblock %}
+
+{% block content %}
+<h2 style="color: #28a745; margin-bottom: 20px;">✓ Order Confirmed!</h2>
+
+<p>Hi {{ user_name|default:"there" }},</p>
+
+<p>Thank you for your order! We're excited to confirm that we've received your order and it's being processed.</p>
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+    <h3 style="color: #333; margin-top: 0;">Order Details</h3>
+    <p>
+        <strong>Order Number:</strong> #{{ order_number }}<br>
+        <strong>Order Date:</strong> {{ order_date }}<br>
+        <strong>Total Amount:</strong> ${{ total_amount }}<br>
+        <strong>Payment Method:</strong> {{ payment_method }}<br>
+        <strong>Estimated Delivery:</strong> {{ estimated_delivery }}
+    </p>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+    <a href="{{ site_url }}/orders/{{ order_number }}" class="btn">Track Your Order</a>
+</div>
+
+<div class="divider"></div>
+
+<h3 style="color: #333;">What's Next?</h3>
+<ol style="margin-left: 20px;">
+    <li><strong>Order Processing:</strong> We're preparing your items for shipment</li>
+    <li><strong>Shipment Notification:</strong> You'll receive an email once your order ships</li>
+    <li><strong>Delivery:</strong> Your order will be delivered to your specified address</li>
+</ol>
+
+<p style="color: #6c757d; font-size: 14px; margin-top: 30px;">
+    <strong>Questions about your order?</strong><br>
+    Visit our <a href="{{ site_url }}/help" style="color: #667eea;">Help Center</a> or reply to this email.
+</p>
+{% endblock %}
