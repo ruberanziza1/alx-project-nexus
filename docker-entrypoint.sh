@@ -3,6 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+
 # Wait for PostgreSQL to be ready (only if using local database)
 if [ "$POSTGRES_HOST" = "db" ]; then
     echo "Waiting for postgres..."
