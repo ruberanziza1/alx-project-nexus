@@ -1,0 +1,82 @@
+<!-- templates/emails/welcome.html -->
+{% extends "emails/base.html" %}
+
+{% block title %}Welcome to {{ site_name }}{% endblock %}
+
+{% block content %}
+<h2 style="color: #333; margin-bottom: 20px;">Welcome to {{ site_name }}! 🎉</h2>
+
+<p>Hi {{ user_name|default:"there" }},</p>
+
+<p>Congratulations! Your email has been successfully verified and your account is now fully activated.</p>
+
+<p>Here's what you can do next:</p>
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+    <h3 style="color: #667eea; margin-top: 0;">Get Started</h3>
+    <ul style="margin-left: 20px;">
+        <li><strong>Complete Your Profile:</strong> Add your personal information and preferences</li>
+        <li><strong>Browse Products:</strong> Explore our wide range of products</li>
+        <li><strong>Add to Cart:</strong> Start shopping and enjoy exclusive offers</li>
+        <li><strong>Track Orders:</strong> Monitor your purchases in real-time</li>
+    </ul>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+    <a href="{{ site_url }}/shop" class="btn">Start Shopping</a>
+</div>
+
+<div class="alert alert-info">
+    <strong>Special Offer:</strong> As a new member, enjoy 10% off your first purchase! Use code: <strong>WELCOME10</strong>
+</div>
+
+<div class="divider"></div>
+
+<p style="color: #6c757d; font-size: 14px;">
+    <strong>Need Help?</strong><br>
+    Our support team is here to assist you. Visit our <a href="{{ site_url }}/help" style="color: #667eea;">Help Center</a> or reply to this email.
+</p>
+
+<p style="color: #6c757d; font-size: 14px;">
+    Follow us on social media for updates and exclusive deals!
+</p>
+{% endblock %}
+
+<!-- templates/emails/password_reset.html -->
+{% extends "emails/base.html" %}
+
+{% block title %}Password Reset Request - {{ site_name }}{% endblock %}
+
+{% block content %}
+<h2 style="color: #333; margin-bottom: 20px;">Password Reset Request</h2>
+
+<p>Hi {{ user_name|default:"there" }},</p>
+
+<p>We received a request to reset your password for your {{ site_name }} account. Use the code below to reset your password:</p>
+
+<div style="text-align: center; margin: 30px 0;">
+    <div class="otp-code">{{ otp_code }}</div>
+</div>
+
+<div class="alert alert-warning">
+    <strong>Important:</strong> This code will expire in {{ expiry_minutes }} minutes for security reasons.
+</div>
+
+<p><strong>How to reset your password:</strong></p>
+<ol style="margin-left: 20px;">
+    <li>Copy the verification code above</li>
+    <li>Return to the password reset page</li>
+    <li>Enter the code along with your new password</li>
+    <li>Click "Reset Password" to complete the process</li>
+</ol>
+
+<div class="divider"></div>
+
+<p style="color: #dc3545; font-weight: bold;">
+    If you didn't request this password reset, please ignore this email and your password will remain unchanged. However, you may want to review your account security.
+</p>
+
+<p style="color: #6c757d; font-size: 14px;">
+    For security reasons, we never send passwords via email. Always create a strong, unique password for your account.
+</p>
+{% endblock %}
