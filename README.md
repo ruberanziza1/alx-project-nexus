@@ -145,7 +145,7 @@ You can also explore the interactive ERD here: [View on dbdiagram.io](https://db
 - **Documentation**: Swagger and ReDoc
 - **Version Control**: Git
 - **Testing**: Django Test Framework
-- **Deployment**: Render (https://alx-project-nexus-89gl.onrender.com/)
+
 
 ---
 
@@ -161,7 +161,7 @@ You can also explore the interactive ERD here: [View on dbdiagram.io](https://db
 ### **Cloning the Repository**
 1. Open your terminal and run:
    ```bash
-   https://github.com/BrianKimurgor/alx-project-nexus
+   https://github.com/ruberanziza1/alx-project-nexus
    cd alx-project-nexus
    ```
 
