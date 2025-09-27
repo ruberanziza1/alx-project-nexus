@@ -182,8 +182,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## **Contact**
 For questions or feedback, feel free to reach out:
-- **Name**: Brian Kimurgor
-- **Email**: kimurgorbrian20@gmail.com
+- **Name**: RUBERANZIZA Janvier
+- **Email**: janvier.ruberanziza@gmail.com
 
 ---
 
